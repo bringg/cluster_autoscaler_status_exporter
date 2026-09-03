@@ -1,0 +1,59 @@
+autoscalerStatus: Initializing
+message: cluster is being resized
+clusterWide:
+  health:
+    lastProbeTime: "2026-09-02T18:33:02Z"
+    lastTransitionTime: "2026-08-30T04:16:37Z"
+    nodeCounts:
+      longUnregistered: 2
+      registered:
+        beingDeleted: 1
+        notStarted: 3
+        ready: 7
+        total: 12
+        unready:
+          resourceUnready: 2
+          total: 4
+      unregistered: 5
+    status: Unhealthy
+  scaleDown:
+    lastProbeTime: "2026-09-02T18:33:22Z"
+    lastTransitionTime: "2026-08-30T04:18:37Z"
+    status: SomethingNew
+  scaleUp:
+    lastProbeTime: "2026-09-02T18:33:12Z"
+    lastTransitionTime: "2026-08-30T04:17:37Z"
+    status: InProgress
+nodeGroups:
+- health:
+    cloudProviderTarget: 5
+    lastProbeTime: "2026-09-02T18:33:32Z"
+    lastTransitionTime: "2026-08-30T04:19:37Z"
+    maxSize: 5
+    minSize: 2
+    nodeCounts:
+      longUnregistered: 1
+      registered:
+        beingDeleted: 1
+        notStarted: 1
+        ready: 3
+        total: 5
+        unready:
+          resourceUnready: 1
+          total: 1
+      unregistered: 2
+    status: Unhealthy
+  name: node-group-at-max
+  scaleDown:
+    candidates: 3
+    lastProbeTime: "2026-09-02T18:33:52Z"
+    lastTransitionTime: "2026-08-30T04:21:37Z"
+    status: CandidatesPresent
+  scaleUp:
+    backoffInfo:
+      errorCode: QUOTA_EXCEEDED
+      errorMessage: Instance 'x' creation failed; quota exceeded in region example-region
+    lastProbeTime: "2026-09-02T18:33:42Z"
+    lastTransitionTime: "2026-08-30T04:20:37Z"
+    status: Backoff
+time: 2026-09-02 18:33:02.234927316 +0000 UTC

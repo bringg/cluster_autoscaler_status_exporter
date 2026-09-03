@@ -1,0 +1,43 @@
+version: '2'
+
+run:
+  timeout: 15m
+  modules-download-mode: readonly
+  allow-parallel-runners: true
+
+linters:
+  default: none
+
+  enable: # please keep this alphabetized
+  - gocritic
+  - gocyclo
+  - govet
+  - ineffassign
+  - misspell
+  - prealloc
+  - promlinter
+  - revive
+  - staticcheck
+  - unconvert
+  - unparam
+  - unused
+
+  exclusions:
+    generated: lax
+
+    presets:
+    - comments
+
+    rules:
+    - linters: ['revive']
+      text: "^unused-parameter:"
+
+    - linters: ['revive', 'staticcheck']
+      path: "_test.go"
+      text: "should not use dot imports"
+
+formatters:
+  enable: # please keep this alphabetized
+  - gofmt
+  - gofumpt
+  - goimports

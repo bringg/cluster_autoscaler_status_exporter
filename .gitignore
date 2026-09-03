@@ -1,0 +1,25 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+vendor/
+
+# Others
+dist/
+cluster_autoscaler_status_exporter
+
+# Internal design notes, specs, plans and ADRs are never published. README.md is
+# the only documentation this repository ships; un-ignore individual files here
+# if a public doc is ever added under docs/.
+docs/
+.superpowers/
