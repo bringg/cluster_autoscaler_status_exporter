@@ -1,0 +1,50 @@
+# HELP cluster_autoscaler_status_node_group_health_state Node group health condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_node_group_health_state gauge
+cluster_autoscaler_status_node_group_health_state{node_group="node-group-at-max",state="Healthy"} 0
+cluster_autoscaler_status_node_group_health_state{node_group="node-group-at-max",state="Unhealthy"} 1
+# HELP cluster_autoscaler_status_node_group_last_probe_timestamp_seconds Time the cluster-autoscaler last evaluated a node group condition, in seconds since the epoch.
+# TYPE cluster_autoscaler_status_node_group_last_probe_timestamp_seconds gauge
+cluster_autoscaler_status_node_group_last_probe_timestamp_seconds{condition="health",node_group="node-group-at-max"} 1.788374012e+09
+cluster_autoscaler_status_node_group_last_probe_timestamp_seconds{condition="scale_down",node_group="node-group-at-max"} 1.788374032e+09
+cluster_autoscaler_status_node_group_last_probe_timestamp_seconds{condition="scale_up",node_group="node-group-at-max"} 1.788374022e+09
+# HELP cluster_autoscaler_status_node_group_last_transition_timestamp_seconds Time a node group condition last changed state, in seconds since the epoch.
+# TYPE cluster_autoscaler_status_node_group_last_transition_timestamp_seconds gauge
+cluster_autoscaler_status_node_group_last_transition_timestamp_seconds{condition="health",node_group="node-group-at-max"} 1.788063577e+09
+cluster_autoscaler_status_node_group_last_transition_timestamp_seconds{condition="scale_down",node_group="node-group-at-max"} 1.788063697e+09
+cluster_autoscaler_status_node_group_last_transition_timestamp_seconds{condition="scale_up",node_group="node-group-at-max"} 1.788063637e+09
+# HELP cluster_autoscaler_status_node_group_max_size Largest number of nodes the cluster-autoscaler may scale the node group to.
+# TYPE cluster_autoscaler_status_node_group_max_size gauge
+cluster_autoscaler_status_node_group_max_size{node_group="node-group-at-max"} 5
+# HELP cluster_autoscaler_status_node_group_min_size Smallest number of nodes the cluster-autoscaler may scale the node group to.
+# TYPE cluster_autoscaler_status_node_group_min_size gauge
+cluster_autoscaler_status_node_group_min_size{node_group="node-group-at-max"} 2
+# HELP cluster_autoscaler_status_node_group_nodes Nodes in the node group, by state.
+# TYPE cluster_autoscaler_status_node_group_nodes gauge
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="being_deleted"} 1
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="long_unregistered"} 1
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="not_started"} 1
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="ready"} 3
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="registered"} 5
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="unready"} 1
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="unready_resource"} 1
+cluster_autoscaler_status_node_group_nodes{node_group="node-group-at-max",state="unregistered"} 2
+# HELP cluster_autoscaler_status_node_group_scale_down_candidates Nodes in the node group the cluster-autoscaler considers candidates for scale-down.
+# TYPE cluster_autoscaler_status_node_group_scale_down_candidates gauge
+cluster_autoscaler_status_node_group_scale_down_candidates{node_group="node-group-at-max"} 3
+# HELP cluster_autoscaler_status_node_group_scale_down_state Node group scale-down condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_node_group_scale_down_state gauge
+cluster_autoscaler_status_node_group_scale_down_state{node_group="node-group-at-max",state="CandidatesPresent"} 1
+cluster_autoscaler_status_node_group_scale_down_state{node_group="node-group-at-max",state="NoCandidates"} 0
+# HELP cluster_autoscaler_status_node_group_scale_up_backoff Present while the cluster-autoscaler is backing off from scaling the node group up, labelled with the cloud provider error code.
+# TYPE cluster_autoscaler_status_node_group_scale_up_backoff gauge
+cluster_autoscaler_status_node_group_scale_up_backoff{error_code="QUOTA_EXCEEDED",node_group="node-group-at-max"} 1
+# HELP cluster_autoscaler_status_node_group_scale_up_state Node group scale-up condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_node_group_scale_up_state gauge
+cluster_autoscaler_status_node_group_scale_up_state{node_group="node-group-at-max",state="Backoff"} 1
+cluster_autoscaler_status_node_group_scale_up_state{node_group="node-group-at-max",state="InProgress"} 0
+cluster_autoscaler_status_node_group_scale_up_state{node_group="node-group-at-max",state="Needed"} 0
+cluster_autoscaler_status_node_group_scale_up_state{node_group="node-group-at-max",state="NoActivity"} 0
+cluster_autoscaler_status_node_group_scale_up_state{node_group="node-group-at-max",state="NotNeeded"} 0
+# HELP cluster_autoscaler_status_node_group_target_size Number of nodes the cloud provider is currently asked to run for the node group.
+# TYPE cluster_autoscaler_status_node_group_target_size gauge
+cluster_autoscaler_status_node_group_target_size{node_group="node-group-at-max"} 5

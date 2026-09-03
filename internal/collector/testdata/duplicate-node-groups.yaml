@@ -1,0 +1,20 @@
+autoscalerStatus: Running
+time: 2026-09-02 18:33:02.234927316 +0000 UTC
+nodeGroups:
+- name: dup
+  health:
+    maxSize: 3
+    minSize: 1
+    cloudProviderTarget: 1
+    status: Healthy
+- name: dup
+  health:
+    maxSize: 99
+    minSize: 99
+    cloudProviderTarget: 99
+    status: Healthy
+- health:
+    maxSize: 42
+    minSize: 42
+    cloudProviderTarget: 42
+    status: Healthy

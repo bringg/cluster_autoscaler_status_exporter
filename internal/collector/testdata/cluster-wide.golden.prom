@@ -1,0 +1,43 @@
+# HELP cluster_autoscaler_status_autoscaler_state State of the cluster-autoscaler itself, 1 for the current state.
+# TYPE cluster_autoscaler_status_autoscaler_state gauge
+cluster_autoscaler_status_autoscaler_state{state="Initializing"} 1
+cluster_autoscaler_status_autoscaler_state{state="Running"} 0
+# HELP cluster_autoscaler_status_health_state Cluster-wide health condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_health_state gauge
+cluster_autoscaler_status_health_state{state="Healthy"} 0
+cluster_autoscaler_status_health_state{state="Unhealthy"} 1
+# HELP cluster_autoscaler_status_last_probe_timestamp_seconds Time the cluster-autoscaler last evaluated a cluster-wide condition, in seconds since the epoch.
+# TYPE cluster_autoscaler_status_last_probe_timestamp_seconds gauge
+cluster_autoscaler_status_last_probe_timestamp_seconds{condition="health"} 1.788373982e+09
+cluster_autoscaler_status_last_probe_timestamp_seconds{condition="scale_down"} 1.788374002e+09
+cluster_autoscaler_status_last_probe_timestamp_seconds{condition="scale_up"} 1.788373992e+09
+# HELP cluster_autoscaler_status_last_transition_timestamp_seconds Time a cluster-wide condition last changed state, in seconds since the epoch.
+# TYPE cluster_autoscaler_status_last_transition_timestamp_seconds gauge
+cluster_autoscaler_status_last_transition_timestamp_seconds{condition="health"} 1.788063397e+09
+cluster_autoscaler_status_last_transition_timestamp_seconds{condition="scale_down"} 1.788063517e+09
+cluster_autoscaler_status_last_transition_timestamp_seconds{condition="scale_up"} 1.788063457e+09
+# HELP cluster_autoscaler_status_nodes Nodes known to the cluster-autoscaler, by state.
+# TYPE cluster_autoscaler_status_nodes gauge
+cluster_autoscaler_status_nodes{state="being_deleted"} 1
+cluster_autoscaler_status_nodes{state="long_unregistered"} 2
+cluster_autoscaler_status_nodes{state="not_started"} 3
+cluster_autoscaler_status_nodes{state="ready"} 7
+cluster_autoscaler_status_nodes{state="registered"} 12
+cluster_autoscaler_status_nodes{state="unready"} 4
+cluster_autoscaler_status_nodes{state="unready_resource"} 2
+cluster_autoscaler_status_nodes{state="unregistered"} 5
+# HELP cluster_autoscaler_status_scale_down_candidates Number of nodes the cluster-autoscaler considers candidates for scale-down.
+# TYPE cluster_autoscaler_status_scale_down_candidates gauge
+cluster_autoscaler_status_scale_down_candidates 0
+# HELP cluster_autoscaler_status_scale_down_state Cluster-wide scale-down condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_scale_down_state gauge
+cluster_autoscaler_status_scale_down_state{state="CandidatesPresent"} 0
+cluster_autoscaler_status_scale_down_state{state="NoCandidates"} 0
+cluster_autoscaler_status_scale_down_state{state="SomethingNew"} 1
+# HELP cluster_autoscaler_status_scale_up_state Cluster-wide scale-up condition, 1 for the current state.
+# TYPE cluster_autoscaler_status_scale_up_state gauge
+cluster_autoscaler_status_scale_up_state{state="Backoff"} 0
+cluster_autoscaler_status_scale_up_state{state="InProgress"} 1
+cluster_autoscaler_status_scale_up_state{state="Needed"} 0
+cluster_autoscaler_status_scale_up_state{state="NoActivity"} 0
+cluster_autoscaler_status_scale_up_state{state="NotNeeded"} 0
