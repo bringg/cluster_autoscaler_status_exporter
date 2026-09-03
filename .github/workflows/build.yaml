@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # Internal specs, plans and ADRs live under docs/ and .superpowers/
+      # locally and must never reach this public repository.
+      - name: Ensure internal docs are not committed
+        run: |
+          if git ls-files docs/ .superpowers/ | grep -q .; then
+            echo "::error::files under docs/ or .superpowers/ are tracked; they must stay local"
+            git ls-files docs/ .superpowers/
+            exit 1
+          fi
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - name: Install tools
+        run: make tools.golangci-lint
+
+      - name: Lint
+        run: make lint
+
+      - name: Build
+        run: make build
+
+      - name: Test
+        run: make unit

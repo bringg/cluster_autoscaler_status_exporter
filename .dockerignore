@@ -1,0 +1,8 @@
+# Internal design documents and build output never belong in the build
+# context; the published image is built from source alone.
+.git
+.github
+docs/
+.superpowers/
+dist/
+cluster_autoscaler_status_exporter

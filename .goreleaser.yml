@@ -1,0 +1,23 @@
+---
+version: 2
+
+before:
+  hooks:
+  - go mod tidy
+
+builds:
+- env:
+  - CGO_ENABLED=0
+  goos:
+  - linux
+  - darwin
+  goarch:
+  - amd64
+  - arm64
+  ldflags:
+  - -X github.com/prometheus/common/version.Version={{.Version}}
+  - -X github.com/prometheus/common/version.Revision={{.FullCommit}}
+  - -X github.com/prometheus/common/version.Branch={{.Branch}}
+
+changelog:
+  disable: true
