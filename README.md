@@ -165,6 +165,9 @@ in the example above) on every metric this exporter produces, leaving other metr
 
 ## Running in Kubernetes
 
+Images are published to `ghcr.io/bringg/cluster_autoscaler_status_exporter`, tagged with each
+release and `latest`, for `linux/amd64` and `linux/arm64`.
+
 [`kubernetes.yaml`](kubernetes.yaml) deploys the exporter: a `ServiceAccount` in the `monitoring`
 namespace, a `Role`/`RoleBinding` in `kube-system` that grants `get` on exactly one ConfigMap
 (`cluster-autoscaler-status`, by resource name — nothing broader), and a single-replica
