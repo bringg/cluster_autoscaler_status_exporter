@@ -4,5 +4,6 @@
 .github
 docs/
 .superpowers/
+grafana/
 dist/
 cluster_autoscaler_status_exporter
