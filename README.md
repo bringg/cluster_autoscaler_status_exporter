@@ -135,6 +135,31 @@ time() - cluster_autoscaler_status_document_timestamp_seconds > 300
 cluster_autoscaler_status_node_group_scale_up_backoff == 1
 ```
 
+## Grafana dashboard
+
+[`grafana/dashboard.json`](grafana/dashboard.json) is a dashboard for these metrics, importable as
+it stands: **Dashboards → New → Import → Upload JSON file**. It picks its Prometheus data source
+from a dropdown, so there is nothing to edit before importing.
+
+Three variables drive it: `datasource`, `job` (one exporter at a time, from
+`label_values(cluster_autoscaler_status_up, job)`) and `node_group` (multi-select, defaulting to
+all).
+
+- **Overview** — exporter up, the autoscaler's own state, the three cluster-wide conditions, how
+  stale the status document is, and counts of node groups at their ceiling or in scale-up backoff.
+- **Node groups** — a capacity table sorted by how close each node group is to `maxSize`, a
+  conditions table showing the health/scale-up/scale-down state and any backoff error code, plus
+  target-against-max, ready nodes, problem nodes and a backoff timeline.
+- **Cluster-wide** — node counts by state, scale-down candidates, and how long ago each condition
+  was evaluated and last changed.
+
+The `node_group` column shows the provider's identifier verbatim, which on GCP is a long
+instance-group URL that the table truncates. Shorten it at scrape time as below and every panel
+becomes readable.
+
+`TestDashboardReferencesEmittedMetrics` fails if the dashboard queries a metric this exporter does
+not emit, so a rename cannot quietly break a panel.
+
 ## Shortening node group names
 
 The `node_group` label is the node group's name exactly as the cluster-autoscaler's cloud provider
