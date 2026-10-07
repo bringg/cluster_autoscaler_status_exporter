@@ -4,7 +4,31 @@ updates:
   directory: "/"
   schedule:
     interval: "weekly"
+  assignees:
+  - Dadavan
+  - nikolay-udovik
+  - Rachunc
+  - shamil
+  - Shareed2k
+
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
     interval: "weekly"
+  assignees:
+  - Dadavan
+  - nikolay-udovik
+  - Rachunc
+  - shamil
+  - Shareed2k
+
+- package-ecosystem: "docker"
+  directory: "/"
+  schedule:
+    interval: "weekly"
+  assignees:
+  - Dadavan
+  - nikolay-udovik
+  - Rachunc
+  - shamil
+  - Shareed2k
