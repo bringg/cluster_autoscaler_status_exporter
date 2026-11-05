@@ -9,7 +9,7 @@ require (
 	github.com/prometheus/common v0.72.1
 	github.com/prometheus/exporter-toolkit v0.20.0
 	k8s.io/api v0.37.1
-	k8s.io/apimachinery v0.37.1
+	k8s.io/apimachinery v0.37.2
 	k8s.io/client-go v0.37.1
 	sigs.k8s.io/yaml v1.6.0
 )
